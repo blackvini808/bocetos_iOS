@@ -2,7 +2,7 @@
 //  mi_primera_chambaApp.swift
 //  mi_primera_chamba
 //
-//  Created by alumno on 03-09-25.
+//  Created by Jadzia Gallegos on 03/09/25.
 //
 
 import SwiftUI
