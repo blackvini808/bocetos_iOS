@@ -1,10 +1,3 @@
-//
-//  juego_adivina_numero.swift
-//  mi_primera_chamba
-//
-//  Created by Jadzia Gallegos on 05/09/25.
-//
-
 import SwiftUI
 
 enum EstadosJuego{
@@ -57,33 +50,28 @@ struct JuegoAdivinaNumero: View{
                 estado_del_juego = .esta_jugando
                 numero_aleatorio = Int.random(in: 1...100)
                 leyenda = ""
+                entrada_del_usuario = ""
         }
     }
     
     var body: some View{
         VStack{
-            Text("SPOILER: \(numero_aleatorio)")
-                .onTapGesture {
-                    mostrar_spoiler = !mostrar_spoiler
+            Spoiler(texto: "Número \(numero_aleatorio)")
+            
+            Spacer()
+            
+            Text("REGLAS").font(.system(size: 18))
+            Text("ADIVINA EL NÚMERO QUE ESTOY PENSANDO...").font(.system(size: 14))
+            Text("Cantidad de intentos: \(intento_del_usuario)").font(.system(size: 12))
+            
+            Spacer()
+            
+            Botonexto(accion: {
+                if estado_del_juego != .ha_ganado {
+                    loop_juego()
                 }
-                .foregroundStyle((mostrar_spoiler) ? Color.black : Color.white)
-            
-            Spacer()
-            
-            Text("REGLAS")
-                
-            Text("Cantidad de intentos: \(intento_del_usuario)")
-            
-            Spacer()
-            
-            TextField("Introduce un numero por favor", text: $entrada_del_usuario)
-                .frame(width: 250)
-                .multilineTextAlignment(.center)
-            
-            Button(action: loop_juego){
-                Text("Intentar")
-                Image(systemName: "paperplane.fill")
-            }
+            }, texto: $entrada_del_usuario, place_holder: "INTRODUCE UN NÚMERO", etiqueta: "Intentar")
+                        
             if(estado_del_juego == .ha_ganado){
                 Spacer()
                 

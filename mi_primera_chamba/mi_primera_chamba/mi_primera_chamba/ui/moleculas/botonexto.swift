@@ -1,0 +1,30 @@
+import SwiftUI
+
+struct Botonexto: View{
+    
+    var accion: () -> Void
+    
+    @Binding var texto: String
+    var place_holder: String = "ADVERTENCIA: NO HAY PLACEHOLDER"
+    var etiqueta: String = "NO HAY ETIQUETA"
+    
+    var body: some View{
+        
+        VStack{
+            TextField(place_holder, text: $texto)
+                .frame(width: 250)
+                .multilineTextAlignment(.center)
+            
+            Button(action: accion){
+                Text(etiqueta)
+                Image(systemName: "paperplane.fill")
+            }
+        }
+    }
+}
+
+#Preview{
+    @Previewable @State var texto = ""
+    
+    Botonexto(accion: {print("HOLA MUNDO")}, texto: $texto)
+}
