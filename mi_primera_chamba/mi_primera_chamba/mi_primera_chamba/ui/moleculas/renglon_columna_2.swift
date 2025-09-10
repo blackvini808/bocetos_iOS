@@ -14,7 +14,7 @@ struct RenglonColumna2: View{
             Spacer()
             Text(columna_2)
                 .padding(.horizontal, 20)
-                .foregroundStyle(Color.pink)
+                .foregroundStyle(Color.green)
         }
     }
 }
