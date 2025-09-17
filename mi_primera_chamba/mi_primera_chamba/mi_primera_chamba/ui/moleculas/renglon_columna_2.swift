@@ -1,3 +1,9 @@
+//
+//  renglon_columna_2.swift
+//  mi_primera_chamba
+//
+//  Created by Jadzia Gallegos on 10/09/25.
+//
 import SwiftUI
 
 struct RenglonColumna2: View{
@@ -9,16 +15,19 @@ struct RenglonColumna2: View{
             Text(columna_1)
                 .padding(15)
                 .multilineTextAlignment(.trailing)
-                .frame(width: 250, alignment: .leading)
+                .frame(width: 200, alignment: .leading)
                 .foregroundStyle(Color.blue)
+                .background(Color.red)
+                //.mask(Circle().offset(x: 35))
+            
             Spacer()
+            
             Text(columna_2)
                 .padding(.horizontal, 20)
-                .foregroundStyle(Color.green)
         }
     }
 }
 
 #Preview {
-    RenglonColumna2(columna_1: "PLACEHOLDER", columna_2: "PLACEHOLDER 2")
+    RenglonColumna2(columna_1: "PLACEHOLDER", columna_2: "PLACE HOLDER 2")
 }

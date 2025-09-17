@@ -7,12 +7,11 @@ struct Leyenda: View {
     
     var body: some View {
         Text(texto)
-            .foregroundStyle((peligro) ? Color.red:
-            Color.black)
+            .foregroundStyle((peligro) ? Color.red: Color.black)
     }
 }
 
 #Preview {
     @Previewable @State var peligro = true
-    Leyenda(peligro: $peligro, texto: "HOLA MUNDO")
+    Leyenda(peligro: $peligro, texto: "HOla mnundo")
 }
