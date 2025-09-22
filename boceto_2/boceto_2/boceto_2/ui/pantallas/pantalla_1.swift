@@ -17,4 +17,5 @@ struct Pantalla1: View {
 
 #Preview {
     Pantalla1()
+        .environment(ControladorBasico())
 }
