@@ -1,9 +1,8 @@
-import SwiftUI
 import Foundation
-    
+import SwiftUI
 
-@Observable
 @MainActor
+@Observable
 public class ControladorBasico{
     var clicks = 0
 }

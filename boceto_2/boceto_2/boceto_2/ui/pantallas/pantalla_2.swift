@@ -1,19 +1,21 @@
 import SwiftUI
 
 struct Pantalla2: View {
-    @State var clicks = 0
+    @Environment(ControladorBasico.self) var controlador
+    
     var body: some View {
-        
         VStack {
             Image(systemName: "square.and.arrow.up")
                 .imageScale(.large)
                 .foregroundStyle(.tint)
-            Text("Bienvenido a la pantalla dos donde clicks vale: \(clicks)")
-        }.onTapGesture {
-            clicks += 1 /// clicks.establecer valot(nuevo_valor)
+            Text("BIenvendio a la pantalla dos donde clicks vale: \(controlador.clicks)")
+        }
+        .onTapGesture {
+            controlador.clicks += 1 ///  clicks.establacer_valor(nuevo_valor)
         }
         .padding()
-    }}
+    }
+}
 
 #Preview {
     Pantalla2()

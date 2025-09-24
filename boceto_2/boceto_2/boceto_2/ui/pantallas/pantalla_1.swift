@@ -8,12 +8,14 @@ struct Pantalla1: View {
             Image(systemName: "globe")
                 .imageScale(.large)
                 .foregroundStyle(.tint)
-            Text("Hello, world! Cantidad de clicks es: \(controlador.clicks)")
-        }.onTapGesture {
-            controlador.clicks += 1 /// clicks.establecer valot(nuevo_valor)
+            Text("Hello, world! cantidad de clicks es: \(controlador.clicks)")
+        }
+        .onTapGesture {
+            controlador.clicks += 1 ///  clicks.establacer_valor(nuevo_valor)
         }
         .padding()
-    }}
+    }
+}
 
 #Preview {
     Pantalla1()
