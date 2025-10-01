@@ -1,9 +1,3 @@
-//
-//  pantalla_noticias.swift
-//  control_navegacion
-//
-//  Created by Jadzia Gallegos on 29/09/25.
-//
 import SwiftUI
 
 struct PantallaNoticias: View {
@@ -14,10 +8,11 @@ struct PantallaNoticias: View {
             VStack{
                 ForEach(lista_noticias) { noticia in
                     NavigationLink{
-                        
+                        PantallaNota(noticia:   noticia)
                     } label: {
                         Encabezado(noticia_presentar: noticia)
                     }
+                    .buttonStyle(.plain)    
                 }
             }
         }
