@@ -4,28 +4,23 @@ import SwiftUI
 struct PantallaInicio: View{
     var body: some View{
         VStack{
-            Spacer()
             Text("Bienvenidos al Himalaya")
-            Spacer()
             NavigationLink {
                 PantallaConfiguracion()
             } label: {
-                Text("Ir a pantalla configuracion")
+                Text("Ir a pantalla configuracion").foregroundStyle(Color.blue)
             }
             NavigationLink {
                 PantallaGaleria()
             } label: {
-                Text("Ir a pantalla galeria")
+                Text("Ir a pantalla galeria").foregroundStyle(Color.blue)
             }
-            Spacer()
         }
         
     }
 }
 
 #Preview {
-    NavigationStack{
         PantallaInicio()
-    }
 }
 
