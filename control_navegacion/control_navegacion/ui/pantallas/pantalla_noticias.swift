@@ -2,17 +2,20 @@ import SwiftUI
 
 struct PantallaNoticias: View {
     @State var lista_noticias = noticias
+    @Environment(ControladorGeneral.self) var controlador
     
     var body: some View {
-        ScrollView{
-            VStack{
-                ForEach(lista_noticias) { noticia in
-                    NavigationLink{
-                        PantallaNota(noticia:   noticia)
-                    } label: {
-                        Encabezado(noticia_presentar: noticia)
+        NavigationStack{
+            ScrollView{
+                VStack{
+                    ForEach(lista_noticias) { noticia in
+                        NavigationLink{
+                            PantallaNota(noticia:   noticia)
+                        } label: {
+                            Encabezado(noticia_presentar: noticia)
+                        }
+                        .buttonStyle(.plain)
                     }
-                    .buttonStyle(.plain)    
                 }
             }
         }
@@ -20,8 +23,6 @@ struct PantallaNoticias: View {
 }
 
 #Preview {
-    NavigationStack{
-        PantallaNoticias()
-    }
+    PantallaNoticias().environment(ControladorGeneral())
 }
 
