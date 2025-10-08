@@ -1,10 +1,3 @@
-//
-//  pantalla_noticia_en_singular.swift
-//  control_navegacion
-//
-//  Created by Jadzia Gallegos on 01/10/25.
-//
-
 import SwiftUI
 
 struct PantallaNota: View {

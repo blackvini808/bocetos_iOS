@@ -1,10 +1,3 @@
-//
-//  json_placeholder.swift
-//  control_navegacion
-//
-//  Created by Jadzia Gallegos on 06/10/25.
-//
-
 import Foundation
 
 class ServicioWeb{

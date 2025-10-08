@@ -1,10 +1,3 @@
-//
-//  errores.swift
-//  control_navegacion
-//
-//  Created by Jadzia Gallegos on 06/10/25.
-//
-
 enum ErroresDeRed: Error{
     case url_mala // Que hay una idreccion mal esgrima
     case peticion_invalida // Existe un error en la peticion HTTP
