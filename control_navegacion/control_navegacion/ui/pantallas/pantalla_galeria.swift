@@ -1,3 +1,9 @@
+//
+//  pantalla_galeria.swift
+//  control_navegacion
+//
+//  Created by Jadzia Gallegos on 29/09/25.
+//
 import SwiftUI
 
 struct PantallaGaleria: View {

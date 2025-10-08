@@ -1,3 +1,10 @@
+//
+//  noticia.swift
+//  control_navegacion
+//
+//  Created by Jadzia Gallegos on 29/09/25.
+//
+
 import Foundation
 
 enum Prioridades{
@@ -29,7 +36,7 @@ let noticias = [
     Noticia(
         titular: "Banco Central anuncia nueva política monetaria para estabilizar economía",
         cuerpo: "El organismo implementará medidas para controlar la inflación y fortalecer el crecimiento económico en los próximos trimestres.",
-        imagen: "economia",
+        imagen: "avogato",
         prioridad: .importante
     ),
     

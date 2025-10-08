@@ -1,3 +1,9 @@
+//
+//  pantalla_noticias.swift
+//  control_navegacion
+//
+//  Created by Jadzia Gallegos on 29/09/25.
+//
 import SwiftUI
 
 struct PantallaNoticias: View {
@@ -7,15 +13,23 @@ struct PantallaNoticias: View {
     var body: some View {
         NavigationStack{
             ScrollView{
-                VStack{
-                    ForEach(lista_noticias) { noticia in
+                LazyVStack{
+                    ForEach(controlador.publicaciones) { publicacion in
+                        
                         NavigationLink{
-                            PantallaNota(noticia:   noticia)
+                            //PantallaNota(noticia: noticia)
                         } label: {
-                            Encabezado(noticia_presentar: noticia)
+                            Encabezado(publicacion: publicacion)
                         }
                         .buttonStyle(.plain)
+                        
                     }
+                }
+            }
+        }.onAppear {
+            if controlador.publicaciones.isEmpty{
+                Task{
+                    await controlador.descargar_publicaciones()
                 }
             }
         }
@@ -23,6 +37,7 @@ struct PantallaNoticias: View {
 }
 
 #Preview {
-    PantallaNoticias().environment(ControladorGeneral())
+    PantallaNoticias()
+        .environment(ControladorGeneral())
 }
 

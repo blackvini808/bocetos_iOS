@@ -1,4 +1,12 @@
+//
+//  ui_navegacion.swift
+//  control_navegacion
+//
+//  Created by Jadzia Gallegos on 29/09/25.
+//
+
 import SwiftUI
+
 
 enum Pestañas{
     case Configuracion
@@ -7,28 +15,21 @@ enum Pestañas{
     case Inicio
 }
 
-
 struct NavegacionPrincipal: View {
     @State var pestaña_actual: Pestañas = .Inicio
     
     var body: some View {
         TabView(selection: $pestaña_actual){
-            
-            Tab("Inicio", systemImage: "house", value: .Inicio){
-                    PantallaInicio()
+            Tab("Watch Now", systemImage: "play", value: .Inicio){
+                PantallaInicio()
             }
+            .badge("STFU")
+            
             Tab("Noticias", systemImage: "newspaper", value: .Noticias){
-                    PantallaNoticias()
+                PantallaNoticias()
             }
             .badge(noticias.count)
-            Tab("Galería", systemImage: "person.crop.square.on.square.angled", value: .Galeria){
-                    PantallaGaleria()
-            }
-            Tab("Configuracion", systemImage: "gearshape", value: .Configuracion){
-                    PantallaConfiguracion()
-            }
         }
-        .tint(Color.green)
     }
 }
 
