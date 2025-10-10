@@ -13,15 +13,22 @@ struct NavegacionPrincipal: View {
     
     var body: some View {
         TabView(selection: $pestaña_actual){
-            Tab("Watch Now", systemImage: "play", value: .Inicio){
+            Tab("Inicio", systemImage: "house", value: .Inicio){
                 PantallaInicio()
             }
-            .badge("STFU")
             
             Tab("Noticias", systemImage: "newspaper", value: .Noticias){
                 PantallaNoticias()
             }
             .badge(noticias.count)
+            
+            Tab("Galería", systemImage: "person.crop.square.on.square.angled", value: .Galeria){
+                PantallaGaleria()
+            }
+            
+            Tab("Configuración", systemImage: "gearshape", value: .Configuracion){
+                PantallaConfiguracion()
+            }
         }
     }
 }

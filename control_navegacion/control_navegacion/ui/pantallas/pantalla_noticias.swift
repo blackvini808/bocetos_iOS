@@ -6,8 +6,9 @@ struct PantallaNoticias: View {
     
     var body: some View {
         if(controlador.publicaciones.isEmpty){
-            Text("Datos cargando... Por favor espera.")
-        } else{
+            Text("Estamos descargando los datos, por favor espera.")
+        }
+        else{
             NavigationStack{
                 ScrollView{
                     LazyVStack{
@@ -16,12 +17,9 @@ struct PantallaNoticias: View {
                             NavigationLink{
                                 PantallaPublicacion(publicacion_actual: publicacion)
                             } label: {
-                                Encabezado(publicacion: publicacion).onTapGesture {
-                                    controlador.publicacion_seleccionada(publicacion.id)
-                                }
+                                Encabezado(publicacion: publicacion)
                             }
                             .buttonStyle(.plain)
-                            
                         }
                     }
                 }
