@@ -20,7 +20,7 @@ struct NavegacionPrincipal: View {
             Tab("Noticias", systemImage: "newspaper", value: .Noticias){
                 PantallaNoticias()
             }
-            .badge(noticias.count)
+            .badge(controlador.publicaciones.count)
             
             Tab("Galería", systemImage: "person.crop.square.on.square.angled", value: .Galeria){
                 PantallaGaleria()
@@ -37,7 +37,3 @@ struct NavegacionPrincipal: View {
 #Preview {
     NavegacionPrincipal()
 }
-
-
-
-

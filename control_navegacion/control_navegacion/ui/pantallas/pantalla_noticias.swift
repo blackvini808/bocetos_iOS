@@ -2,8 +2,8 @@ import SwiftUI
 
 struct PantallaNoticias: View {
     @State var lista_noticias = noticias
-    @Environment(ControladorGeneral.self) var controlador
-    
+    @EnvironmentObject var controlador: ControladorGeneral
+
     var body: some View {
         if(controlador.publicaciones.isEmpty){
             Text("Estamos descargando los datos, por favor espera.")
@@ -30,6 +30,6 @@ struct PantallaNoticias: View {
 
 #Preview {
     PantallaNoticias()
-        .environment(ControladorGeneral())
+        .environmentObject(ControladorGeneral())
 }
 

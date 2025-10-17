@@ -1,7 +1,7 @@
 import SwiftUI
 
 struct PantallaPublicacion: View {
-    @Environment(ControladorGeneral.self) var controlador
+    @EnvironmentObject var controlador: ControladorGeneral
     
     var publicacion_actual: Publicacion
     var servicioUsuario = ServicioUsuario()  // Instancia del servicio para obtener usuarios

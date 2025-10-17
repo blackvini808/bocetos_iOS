@@ -3,13 +3,12 @@ import Foundation
 
 @Observable
 @MainActor
-class ControladorGeneral{
+class ControladorGeneral: ObservableObject{
     let url_base = "https://jsonplaceholder.typicode.com"
     
-    var publicaciones: [Publicacion] = []
-    var comentarios: [Comentario] = []
-    
-    var publicacion_actual: Publicacion? = nil
+    @Published var publicaciones: [Publicacion] = []
+    @Published var comentarios: [Comentario] = []
+    @Published var publicacion_actual: Publicacion? = nil
     
     init(){
         Task{
@@ -19,7 +18,7 @@ class ControladorGeneral{
     func descargar_publicaciones() async {
         guard let publiaciones_descargadas: [Publicacion] = await ServicioWeb().descargar_datos(url: "\(url_base)/posts")
             else { return }
-        publicaciones = publiaciones_descargadas
+        publicaciones = publicaciones_descargadas
         
         //#if targetEnvironment(simulator)
         do{
