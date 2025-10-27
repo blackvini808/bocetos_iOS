@@ -15,6 +15,7 @@ class DemonSlayerApp{
     var datos_pagina_actual: DatosPagina? = nil
     var pagina_actual = 1
     static let demon_slayer_api = "https://demonslayer-api.com/api/v1"
+    static let bromita = "https://sv443.net/jokeapi/v2/"
     
     init() {
         Task{
@@ -45,4 +46,17 @@ class DemonSlayerApp{
             await descargar_personajes()
         }
     }
+    
+    func anterior_pagina(){
+           pagina_actual = pagina_actual - 1
+           
+           if (pagina_actual < 1){
+               pagina_actual += 1
+               return
+           }
+           print("página actual: \(pagina_actual)")
+           Task{
+               await descargar_personajes()
+           }
+       }
 }
