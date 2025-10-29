@@ -5,6 +5,12 @@
 //  Created by alumno on 27-10-25.
 //
 
-struct RespuestaJokeApi{
-    
+struct RespuestaJokeApi: Codable{
+    let error: Bool
+    let category: String
+    let type: String
+    let joke: String?
+    let setup: String?
+    let delivery: String?
+    let id: Int
 }

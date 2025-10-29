@@ -8,21 +8,33 @@ struct PantallaPersonajes: View {
             Spacer()
             ScrollView {
                 ForEach(controlador.personajes) { personaje in
-                    NavigationLink(destination: DetallePersonaje(personaje: personaje)) {
+                    NavigationLink(destination: DetallesPersonaje(controlador: DemonSlayerApp(), personaje: personaje)) {
                         TarjetaPersonaje(personaje: personaje)
-                            .padding(.bottom, 10) // Espaciado entre tarjetas
+                            .padding(.bottom, 10)
                     }
-                    .buttonStyle(PlainButtonStyle()) // Para evitar que el botón tenga un estilo predefinido
+                    .buttonStyle(PlainButtonStyle())
                 }
             }
             Spacer()
             HStack{
                 Spacer()
-                Image(systemName: "arrowshape.left.fill").onTapGesture {
-                    controlador.anterior_pagina()
-                }
+                Image(systemName: "arrowshape.backward.circle")
+                    .resizable()
+                    .scaledToFit()
+                    .frame(width: 30, height: 30)
+                    .foregroundColor(.blue)
+                    .onTapGesture {
+                        controlador.anterior_pagina()
+                    }
                 Spacer()
-                Image(systemName: "arrowshape.right.fill").onTapGesture {controlador.siguiente_pagina()}
+                Image(systemName: "arrowshape.forward.circle")
+                    .resizable()
+                    .scaledToFit()
+                    .frame(width: 30, height: 30)
+                    .foregroundColor(.blue)
+                    .onTapGesture {
+                        controlador.siguiente_pagina()
+                    }
                 Spacer()
             }
             

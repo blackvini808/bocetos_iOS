@@ -37,15 +37,6 @@ struct TarjetaPersonaje: View {
                 .lineLimit(1)
                 .padding(.top, 10)
             
-            // Descripción (si es necesario)
-            Text(personaje.description)
-                .font(.body)
-                .foregroundColor(.black)
-                .multilineTextAlignment(.center)
-                .padding(.horizontal, 20)
-                .lineLimit(3)
-                .padding(.top, 5)
-            
             // Cita del personaje
             Text("\"\(personaje.quote)\"")
                 .italic()
