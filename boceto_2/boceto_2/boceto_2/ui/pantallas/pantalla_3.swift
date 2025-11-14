@@ -1,6 +1,6 @@
 import SwiftUI
 
-enum SaboresPalomitas: String, CaseIterable, Identifiable{
+enum SaboresPalomitas: String, CaseIterable, Identifiable {
     case Naturales
     case Mantequilla
     case Acarameladas
@@ -11,7 +11,7 @@ enum SaboresPalomitas: String, CaseIterable, Identifiable{
     var id: Self { self }
 }
 
-enum SeleccionSeries: String, CaseIterable, Identifiable{
+enum SeleccionSeries: String, CaseIterable, Identifiable {
     case TheFlash
     case TED
     case YOU
@@ -22,7 +22,7 @@ enum SeleccionSeries: String, CaseIterable, Identifiable{
     var id: Self { self }
 }
 
-enum SeleccionPelis: String, CaseIterable, Identifiable{
+enum SeleccionPelis: String, CaseIterable, Identifiable {
     case AVATAR
     case GigantesDeAcero
     case SPIRIT
@@ -33,7 +33,7 @@ enum SeleccionPelis: String, CaseIterable, Identifiable{
     var id: Self { self }
 }
 
-enum SeleccionDocus: String, CaseIterable, Identifiable{
+enum SeleccionDocus: String, CaseIterable, Identifiable {
     case PlanetaTierra
     case PlanetaTierra_S
     
@@ -59,12 +59,14 @@ struct PantallaOpciones: View {
             ScrollView{
                 VStack{
                     Text("Formulario para calcular la cantidad de palomitas")
+                        .foregroundColor(.white) // Cambiar el color del texto a blanco
                     Spacer()
                     Spacer()
                     Divider().frame(height: 2).background(Color.red)
                     HStack{
                         Spacer()
                         Text("¿Quieres palomitas?")
+                            .foregroundColor(.white) // Cambiar el color del texto a blanco
                         CajaCheck(checado: $quiere_palomitas, tamaño: 30)
                         Spacer()
                     }
@@ -72,64 +74,72 @@ struct PantallaOpciones: View {
                     if quiere_palomitas{
                         HStack{
                             Text("¿Cuál sabor?")
-                                Picker(selection:$sabor_de_palomitas , label: Text("Sabor de palomitas")) {
-                                    Text("Naturales").tag(SaboresPalomitas.Naturales)
-                                    Text("Mantequilla").tag(SaboresPalomitas.Mantequilla)
-                                    Text("Acarameladas").tag(SaboresPalomitas.Acarameladas)
-                                    Text("Doritos").tag(SaboresPalomitas.Doritos)
-                                    Text("Takis").tag(SaboresPalomitas.Takis)
-                                    Text("Sorpresa").tag(SaboresPalomitas.Brisket)
+                                .foregroundColor(.white) // Cambiar el color del texto a blanco
+                            Picker(selection:$sabor_de_palomitas , label: Text("Sabor de palomitas")) {
+                                Text("Naturales").tag(SaboresPalomitas.Naturales)
+                                Text("Mantequilla").tag(SaboresPalomitas.Mantequilla)
+                                Text("Acarameladas").tag(SaboresPalomitas.Acarameladas)
+                                Text("Doritos").tag(SaboresPalomitas.Doritos)
+                                Text("Takis").tag(SaboresPalomitas.Takis)
+                                Text("Sorpresa").tag(SaboresPalomitas.Brisket)
                             }
                         }
                     }
                     Divider().frame(height: 2).background(Color.cyan)
                     VStack{
                         Text("¿Qué vamos a ver?")
+                            .foregroundColor(.white) // Cambiar el color del texto a blanco
                         HStack{
                             Spacer()
                             Text("Serie")
+                                .foregroundColor(.white) // Cambiar el color del texto a blanco
                             CajaCheck(checado: $quiere_series, tamaño: 30)
                             Spacer()
                             Text("Película")
+                                .foregroundColor(.white) // Cambiar el color del texto a blanco
                             CajaCheck(checado: $quiere_peliculas, tamaño: 30)
                             Spacer()
                             Text("Documental")
+                                .foregroundColor(.white) // Cambiar el color del texto a blanco
                             CajaCheck(checado: $quiere_docus, tamaño: 30)
                             Spacer()
                         }
                         if quiere_series{
                             HStack{
                                 Text("Escoge de la seleccion")
-                                    Picker(selection:$series , label: Text("Seleccion series")) {
-                                        Text("The Flash").tag(SeleccionSeries.TheFlash)
-                                        Text("TED").tag(SeleccionSeries.TED)
-                                        Text("YOU").tag(SeleccionSeries.YOU)
-                                        Text("La Familia P.Luche").tag(SeleccionSeries.FamiliaPLuche)
-                                        Text("WEDNESDAY").tag(SeleccionSeries.Wednesday)
-                                        Text("Betty la fea").tag(SeleccionSeries.BettyLaFea)
+                                    .foregroundColor(.white) // Cambiar el color del texto a blanco
+                                Picker(selection:$series , label: Text("Seleccion series")) {
+                                    Text("The Flash").tag(SeleccionSeries.TheFlash)
+                                    Text("TED").tag(SeleccionSeries.TED)
+                                    Text("YOU").tag(SeleccionSeries.YOU)
+                                    Text("La Familia P.Luche").tag(SeleccionSeries.FamiliaPLuche)
+                                    Text("WEDNESDAY").tag(SeleccionSeries.Wednesday)
+                                    Text("Betty la fea").tag(SeleccionSeries.BettyLaFea)
                                 }
                             }
                         }
                         if quiere_peliculas{
                             HStack{
                                 Text("Escoge de la seleccion")
-                                    Picker(selection:$peliculas , label: Text("Seleccion pelis")) {
-                                        Text("Avatar").tag(SeleccionPelis.AVATAR)
-                                        Text("Gigantes de Acero").tag(SeleccionPelis.GigantesDeAcero)
-                                        Text("Spirit").tag(SeleccionPelis.SPIRIT)
-                                        Text("Deadpool").tag(SeleccionPelis.DEADPOOL)
-                                        Text("Tren Bala").tag(SeleccionPelis.BulletTrain)
-                                        Text("Knives Out").tag(SeleccionPelis.KnivesOut)
+                                    .foregroundColor(.white) // Cambiar el color del texto a blanco
+                                Picker(selection:$peliculas , label: Text("Seleccion pelis")) {
+                                    Text("Avatar").tag(SeleccionPelis.AVATAR)
+                                    Text("Gigantes de Acero").tag(SeleccionPelis.GigantesDeAcero)
+                                    Text("Spirit").tag(SeleccionPelis.SPIRIT)
+                                    Text("Deadpool").tag(SeleccionPelis.DEADPOOL)
+                                    Text("Tren Bala").tag(SeleccionPelis.BulletTrain)
+                                    Text("Knives Out").tag(SeleccionPelis.KnivesOut)
                                 }
                             }
                         }
                         if quiere_docus{
                             HStack{
                                 Text("Escoge de la seleccion")
-                                    Picker(selection:$docus , label: Text("Seleccion docus")) {
-                                        Text("Planeta Tierra").tag(SeleccionDocus.PlanetaTierra)
-                                        Text("Planeta Tierra en Silencio").tag(SeleccionDocus.PlanetaTierra_S)
-                                    }
+                                    .foregroundColor(.white) // Cambiar el color del texto a blanco
+                                Picker(selection:$docus , label: Text("Seleccion docus")) {
+                                    Text("Planeta Tierra").tag(SeleccionDocus.PlanetaTierra)
+                                    Text("Planeta Tierra en Silencio").tag(SeleccionDocus.PlanetaTierra_S)
+                                }
                             }
                         }
                             
@@ -148,4 +158,3 @@ struct PantallaOpciones: View {
     PantallaOpciones()
         .environment(ControladorBasico())
 }
-
